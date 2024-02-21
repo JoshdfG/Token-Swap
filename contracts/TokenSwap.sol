@@ -17,9 +17,7 @@ contract TokenSwap {
         swapRate = _swapRate;
     }
 
-    function swapTokenFromForTokenTo(
-        uint256 _amount // uint256 _minAmountOut
-    ) external {
+    function swapTokenFromForTokenTo(uint256 _amount) external {
         require(
             IERC20(tokenFrom).allowance(msg.sender, address(this)) >= _amount,
             "Insufficient allowance"
